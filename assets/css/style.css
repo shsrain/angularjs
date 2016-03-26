@@ -1,0 +1,26 @@
+.border{
+    border:1px solid silver;
+}
+
+.header{
+    height:120px;
+}
+
+.headerMenu li{
+    float:left;
+    padding:2px 5px;
+    list-style:none;
+}
+
+.leftbar{
+    float:left;width:20%;border:1px solid silver;overflow:hidden;
+}
+
+.main{
+    float:right;width:78%;overflow:hidden;
+}
+
+.footer{
+    clear:both;
+    height:120px;
+}

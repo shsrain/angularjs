@@ -1,0 +1,46 @@
+<div ng-controller="HomeCtrl">
+    <div>
+        <h3>控制器属性绑定示例：</h3>
+        <p>{{ firstName + " " + lastName }}</p>
+    </div>
+    <hr>
+    <div ng-click="toggle()">
+        <h3>控制器方法侦听事件绑定示例：</h3>
+        <p>{{fullName('shsrain')}}</p>
+    </div>
+    <hr>
+    <div>
+        <h3>控制器方法返回json遍历示例：</h3>
+        <li ng-repeat="phone in phonesList">
+            <h3>{{phone.name}}</h3>
+            <p>{{phone.snippet}}</p>
+        </li>
+    </div>
+    <hr>
+    <div>
+        <h3>双向绑定与更新侦听示例：</h3>
+        <p>名字: <input ng-model="name"></p>
+        <p>你输入了: {{name}}</p>
+        <p>名字改变了: {{updated}} 次</p>
+    </div>
+    <hr>
+    <div>
+        <h3>自定义过滤器示例：</h3>
+        <p>原始名字:{{ name }}</p>
+        <p>倒叙排列 名字:{{ name | reverse }}</p>
+        <p>倒叙排列并大写 名字:{{ name | reverse:true }}</p>
+    </div>
+    <hr>
+    <div>
+        <div ng-click="modelGet()">
+            <h3>获取服务器数据示例：</h3>
+            <li ng-repeat="data in serverData" ng-model="serverData">
+                <h3>{{data.Name}}</h3>
+                <p>{{data.City}}</p>
+                <p>{{data.Country}}</p>
+            </li>
+        </div>
+    </div>
+    <hr>
+    <h3>包含html文件示例：</h3>
+</div>

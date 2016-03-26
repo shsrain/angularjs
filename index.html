@@ -1,0 +1,99 @@
+<!doctype html>
+<html class="no-js" id="app">
+<head ng-controller="HeadCtrl">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{{metaTitle}}</title>
+  <meta name="description" content="{{metaKeywords}}">
+  <meta name="keywords" content="{{metaDescription}}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link rel="icon" type="image/png" href="assets/i/favicon.png">
+  <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+  <link rel="stylesheet" href="./lib/AmazeUI/2.5.2.min/css/amazeui.css"/>
+  <link rel="stylesheet" href="./lib/AmazeUI/2.5.2.min/css/admin.css">
+</head>
+<body>
+<!--[if lte IE 9]>
+<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，Amaze UI 暂不支持。 请 <a href="http://browsehappy.com/" target="_blank">升级浏览器</a>
+  以获得更好的体验！</p>
+<![endif]-->
+
+<header class="am-topbar admin-header" ng-controller="HeaderCtrl">
+  <div class="am-topbar-brand">
+    <strong>Amaze UI</strong> <small>后台管理模板</small>
+  </div>
+
+  <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+
+  <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
+
+    <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
+      <li><a href="javascript:;"><span class="am-icon-envelope-o"></span> 收件箱 <span class="am-badge am-badge-warning">5</span></a></li>
+      <li class="am-dropdown" data-am-dropdown>
+        <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
+          <span class="am-icon-users"></span> 管理员 <span class="am-icon-caret-down"></span>
+        </a>
+        <ul class="am-dropdown-content">
+          <li><a href="#" ui-sref=".system-index"><span class="am-icon-user"></span> 资料</a></li>
+          <li><a href="#"><span class="am-icon-cog"></span> 设置</a></li>
+          <li><a href="#"><span class="am-icon-power-off"></span> 退出</a></li>
+        </ul>
+      </li>
+      <li class="am-hide-sm-only"><a href="javascript:;" id="admin-fullscreen"><span class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a></li>
+    </ul>
+  </div>
+</header>
+
+<div class="am-cf admin-main" ng-controller="BowerCtrl">
+  <!-- sidebar start -->
+  <div class="admin-sidebar am-offcanvas" id="admin-offcanvas" ui-view="leftBar">
+    <div ng-include="'partials/common/leftBar.html'"></div>
+  </div>
+  <!-- sidebar end -->
+
+  <!-- content start -->
+  <div class="admin-content" ui-view="main">
+        <div ng-include="'partials/common/index.html'"></div>
+  </div>
+  <!-- content end -->
+
+</div>
+
+<a href="#" class="am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}">
+  <span class="am-icon-btn am-icon-th-list"></span>
+</a>
+
+<footer ui-view="footer">
+    <div ng-include="'partials/common/footer.html'"></div>
+</footer>
+
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="./lib/AmazeUI/2.5.2.min/js/amazeui.ie8polyfill.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="./lib/AmazeUI/2.5.2.min/js/jquery.js"></script>
+<!--<![endif]-->
+<script src="./lib/AmazeUI/2.5.2.min/js/amazeui.js"></script>
+<script src="./lib/AmazeUI/2.5.2.min/js/app.js"></script>
+<script src="./lib/angular/1.5.0.min/angular.js"></script>
+<script src="./lib/angular-ui-router/0.2.18.min/angular-ui-router.js"></script>
+<script src="./app.js"></script>
+<script src="./app/common/module.js"></script>
+<script src="./app/home/module.js"></script>
+<script src="./app/help/module.js"></script>
+<script src="./app/blog/module.js"></script>
+<script src="./app/common/services/models/commonModel.js"></script>  
+<script src="./app/home/services/models/articleModel.js"></script>
+<script src="./app/help/services/models/helpModel.js"></script>
+<script src="./app/home/controllers/HomeCtrl.js"></script>
+<script src="./app/help/controllers/HelpCtrl.js"></script>
+<script src="./app/blog/controllers/BlogCtrl.js"></script>
+<script src="./app/home/filters/reverseFilter.js"></script>
+</body>
+</html>
